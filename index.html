@@ -199,7 +199,7 @@
         /* Testimonials Section */
         .testimonials {
             padding: 80px 0;
-            background-color: white;
+            background-color: #f4f5f7; /* Professional light gray */
         }
         
         .testimonials-grid {
@@ -210,7 +210,7 @@
         }
         
         .testimonial-card {
-            background-color: #f9f9f9;
+            background-color: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -311,6 +311,12 @@
             
             nav ul {
                 margin-top: 20px;
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
             }
             
             .about-content {
@@ -323,6 +329,33 @@
             
             .hero p {
                 font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .services-grid, .testimonials-grid, .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .about-image img {
+                margin-bottom: 20px;
             }
         }
     </style>
