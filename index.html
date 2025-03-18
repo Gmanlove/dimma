@@ -38,6 +38,57 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .mobile-menu {
+            display: none;
+            background-color: #ffffff; /* Changed to white for a professional look */
+            padding: 20px;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 999;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            border-top: 1px solid #eaeaea; /* Subtle border for separation */
+        }
+
+        .mobile-menu.active {
+            display: block;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-menu ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-menu ul li a {
+            display: block;
+            padding: 5px 0;
+            color: #1a2a36; /* Dark text for contrast on white background */
+            font-weight: 500; /* Slightly bolder for better readability */
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu ul li a:hover {
+            color: #ff6b6b; /* Coral red on hover */
+        }
+
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -306,11 +357,6 @@
         }
         
         /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
         @keyframes slideUp {
             from { transform: translateY(50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -318,19 +364,12 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
+            .hamburger-menu {
+                display: block;
             }
             
-            nav ul {
-                margin-top: 20px;
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin-left: 0;
-                margin-bottom: 10px;
+            .header-content nav {
+                display: none;
             }
             
             .about-content {
@@ -381,8 +420,9 @@
             <div class="logo">
                 <h1>Chidimma Francisca Obi<span>Real Estate Professional</span></h1>
             </div>
+            <div class="hamburger-menu" id="hamburger-menu" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">☰</div>
             <nav>
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
@@ -390,6 +430,15 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </header>
 
@@ -540,7 +589,7 @@
                     <div class="contact-icon">📧</div>
                     <h3>Email</h3>
                     <p>For detailed inquiries</p>
-                    <a href="obic5811@gmail.com">obic5811@gmail.com</a>
+                    <a href="mailto:obic5811@gmail.com">obic5811@gmail.com</a>
                 </div>
                 
                 <div class="contact-card">
@@ -560,8 +609,9 @@
         </div>
     </footer>
 
-    <!-- Smooth Scroll Script -->
+    <!-- Scripts -->
     <script>
+        // Smooth scroll functionality
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -569,6 +619,48 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Hamburger menu toggle
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        hamburgerMenu.addEventListener('click', function() {
+            const isExpanded = mobileMenu.classList.toggle('active');
+            hamburgerMenu.textContent = isExpanded ? '✕' : '☰';
+            hamburgerMenu.setAttribute('aria-expanded', isExpanded);
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.textContent = '☰';
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('touchstart', function(e) {
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                !hamburgerMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.textContent = '☰';
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+            }
+        }, { passive: true });
+        
+        // Also add mouse click support for desktop
+        document.addEventListener('click', function(e) {
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                !hamburgerMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                hamburgerMenu.textContent = '☰';
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+            }
         });
     </script>
 </body>
