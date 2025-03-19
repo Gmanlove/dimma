@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chidimma Francisca Obi - Real Estate Professional</title>
+    <title>Chidimma Francisca Obi - Real Estate & Legal Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and base styles */
         * {
@@ -45,7 +46,7 @@
 
         .mobile-menu {
             display: none;
-            background-color: #ffffff; /* Changed to white for a professional look */
+            background-color: #ffffff;
             padding: 20px;
             position: absolute;
             width: 100%;
@@ -56,7 +57,7 @@
             transition: opacity 0.3s ease;
             opacity: 0;
             pointer-events: none;
-            border-top: 1px solid #eaeaea; /* Subtle border for separation */
+            border-top: 1px solid #eaeaea;
         }
 
         .mobile-menu.active {
@@ -74,13 +75,13 @@
         .mobile-menu ul li a {
             display: block;
             padding: 5px 0;
-            color: #1a2a36; /* Dark text for contrast on white background */
-            font-weight: 500; /* Slightly bolder for better readability */
+            color: #1a2a36;
+            font-weight: 500;
             transition: color 0.3s;
         }
         
         .mobile-menu ul li a:hover {
-            color: #ff6b6b; /* Coral red on hover */
+            color: #ff6b6b;
         }
 
         .hamburger-menu {
@@ -123,7 +124,7 @@
         }
         
         nav ul li a:hover {
-            color: #ff6b6b; /* Coral red */
+            color: #ff6b6b;
         }
         
         /* Hero Section */
@@ -157,17 +158,27 @@
         
         .btn {
             display: inline-block;
-            background-color: #ff6b6b; /* Coral red */
+            background-color: #ff6b6b;
             color: white;
             padding: 12px 30px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 700;
             transition: background-color 0.3s;
+            margin: 0 10px 10px 0;
         }
         
         .btn:hover {
-            background-color: #ff4757; /* Darker coral red */
+            background-color: #ff4757;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
         
         /* About Section */
@@ -200,19 +211,81 @@
         .section-title {
             font-size: 36px;
             margin-bottom: 20px;
-            color: #1a2a36; /* Dark blue */
+            color: #1a2a36;
         }
         
         .about-text p {
             font-size: 16px;
             line-height: 1.8;
             color: #555;
+            margin-bottom: 15px;
+        }
+
+        .credentials {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .credential {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-right: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .credential i {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .credential h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #1a2a36;
+        }
+
+        .credential p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 0;
         }
         
         /* Services Section */
         .services {
             padding: 80px 0;
             background-color: #f9f9f9;
+        }
+
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .service-tab {
+            padding: 12px 25px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .service-tab:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .service-tab:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        .service-tab.active {
+            background-color: #1a2a36;
+            color: white;
+            border-color: #1a2a36;
         }
         
         .services-grid {
@@ -238,19 +311,112 @@
         .service-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
-            color: #1a2a36; /* Dark blue */
+            color: #1a2a36;
         }
         
         .service-icon {
             font-size: 48px;
             margin-bottom: 20px;
-            color: #ff6b6b; /* Coral red */
+            color: #ff6b6b;
+        }
+
+        .service-content {
+            display: none;
+        }
+
+        .service-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        /* Dual Expertise Section */
+        .dual-expertise {
+            padding: 80px 0;
+            background: linear-gradient(rgba(26, 42, 54, 0.9), rgba(26, 42, 54, 0.9)), url('https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .dual-expertise h2 {
+            margin-bottom: 30px;
+        }
+
+        .dual-expertise p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+        }
+
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .benefit:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit i {
+            font-size: 36px;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+
+        .benefit h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .benefit p {
+            font-size: 16px;
+            margin-bottom: 0;
         }
         
         /* Testimonials Section */
         .testimonials {
             padding: 80px 0;
-            background-color: #f8f9fa; /* Soft pastel background */
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-tab {
+            padding: 12px 25px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .testimonial-tab:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .testimonial-tab:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        .testimonial-tab.active {
+            background-color: #1a2a36;
+            color: white;
+            border-color: #1a2a36;
         }
         
         .testimonials-grid {
@@ -290,7 +456,7 @@
         
         .testimonial-card h4 {
             font-size: 18px;
-            color: #1a2a36; /* Dark blue */
+            color: #1a2a36;
             margin-bottom: 5px;
         }
         
@@ -300,8 +466,17 @@
         }
         
         .stars {
-            color: #ffd700; /* Gold color for stars */
+            color: #ffd700;
             margin-bottom: 10px;
+        }
+
+        .testimonial-content {
+            display: none;
+        }
+
+        .testimonial-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
         }
         
         /* Contact Section */
@@ -328,13 +503,13 @@
         .contact-icon {
             font-size: 48px;
             margin-bottom: 20px;
-            color: #ff6b6b; /* Coral red */
+            color: #ff6b6b;
         }
         
         .contact-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
-            color: #1a2a36; /* Dark blue */
+            color: #1a2a36;
         }
         
         .contact-card p {
@@ -343,14 +518,14 @@
         }
         
         .contact-card a {
-            color: #ff6b6b; /* Coral red */
+            color: #ff6b6b;
             text-decoration: none;
             font-weight: 700;
         }
         
         /* Footer */
         footer {
-            background-color: #1a2a36; /* Dark blue */
+            background-color: #1a2a36;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -391,6 +566,19 @@
             .services-grid, .testimonials-grid, .contact-methods {
                 grid-template-columns: 1fr;
             }
+
+            .credentials {
+                flex-direction: column;
+            }
+
+            .credential {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .benefit {
+                width: 100%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -410,6 +598,11 @@
             .about-image img {
                 margin-bottom: 20px;
             }
+
+            .service-tab, .testimonial-tab {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -418,7 +611,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>Chidimma Francisca Obi<span>Real Estate Professional</span></h1>
+                <h1>Chidimma Francisca Obi<span>Real Estate & Legal Professional</span></h1>
             </div>
             <div class="hamburger-menu" id="hamburger-menu" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">☰</div>
             <nav>
@@ -426,6 +619,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#expertise">Dual Expertise</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -436,6 +630,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Dual Expertise</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -445,9 +640,12 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-content">
-            <h2>Find Your Dream Property</h2>
-            <p>With expert guidance and personalized service for all your real estate needs</p>
-            <a href="#contact" class="btn">Contact Me</a>
+            <h2>Expert Real Estate & Legal Services</h2>
+            <p>Combining professional expertise in real estate and law to provide comprehensive solutions for your property and legal needs</p>
+            <div>
+                <a href="#services" class="btn">Explore Services</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
         </div>
     </section>
 
@@ -459,9 +657,25 @@
             </div>
             <div class="about-text">
                 <h2 class="section-title">About Me</h2>
-                <p>Welcome to my real estate services. I'm Chidimma Francisca Obi, a dedicated real estate professional with a passion for helping clients find their perfect property.</p>
-                <p>With extensive knowledge of the local market and a commitment to personalized service, I work tirelessly to ensure your real estate journey is smooth and successful.</p>
-                <p>Whether you're buying your first home, selling a property, or looking for investment opportunities, I'm here to guide you every step of the way.</p>
+                <p>Welcome to my professional services. I'm Chidimma Francisca Obi, a dedicated real estate and legal professional with a passion for helping clients navigate both property transactions and legal matters with confidence.</p>
+                
+                <div class="credentials">
+                    <div class="credential">
+                        <i class="fas fa-home"></i>
+                        <h4>Real Estate Expert</h4>
+                        <p>10+ Years Experience</p>
+                    </div>
+                    <div class="credential">
+                        <i class="fas fa-gavel"></i>
+                        <h4>Licensed Attorney</h4>
+                        <p>Specialized in Property Law</p>
+                    </div>
+                </div>
+                
+                <p>With extensive knowledge of both the real estate market and legal frameworks, I offer a unique advantage to my clients. My dual expertise allows me to provide comprehensive guidance through complex property transactions while ensuring all legal aspects are properly addressed.</p>
+                
+                <p>Whether you're buying your first home, selling a property, need legal representation, or seeking advice on property law matters, I'm here to guide you every step of the way with professional expertise in both fields.</p>
+                
                 <a href="#contact" class="btn">Get in Touch</a>
             </div>
         </div>
@@ -471,43 +685,124 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">My Services</h2>
-            <p>I offer comprehensive real estate services tailored to meet your specific needs.</p>
+            <p>I offer comprehensive real estate and legal services tailored to meet your specific needs.</p>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Residential Sales</h3>
-                    <p>Find your dream home with my expert guidance through the buying process, from property search to closing.</p>
+            <div class="service-tabs">
+                <div class="service-tab active" data-tab="real-estate">Real Estate Services</div>
+                <div class="service-tab" data-tab="legal">Legal Services</div>
+            </div>
+            
+            <div id="real-estate-services" class="service-content active">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>Residential Sales</h3>
+                        <p>Find your dream home with my expert guidance through the buying process, from property search to closing.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🏙️</div>
+                        <h3>Property Listing</h3>
+                        <p>Maximize your property's value with strategic marketing, professional photography, and expert negotiation.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Market Analysis</h3>
+                        <p>Get detailed insights on property values, market trends, and investment opportunities in your area of interest.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Land Acquisition</h3>
+                        <p>Discover prime land opportunities for development or investment with comprehensive due diligence support.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📝</div>
+                        <h3>Property Management</h3>
+                        <p>Enjoy peace of mind with professional management services for your investment properties.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💼</div>
+                        <h3>Investment Consulting</h3>
+                        <p>Receive expert advice on real estate investments to maximize returns and minimize risks.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="legal-services" class="service-content">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">⚖️</div>
+                        <h3>Real Estate Law</h3>
+                        <p>Expert legal guidance for property transactions, ensuring compliance with all relevant laws and regulations.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📜</div>
+                        <h3>Contract Review</h3>
+                        <p>Thorough review and drafting of real estate contracts to protect your interests and prevent future disputes.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🏛️</div>
+                        <h3>Property Disputes</h3>
+                        <p>Effective representation in property disputes, boundary issues, and landlord-tenant conflicts.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📋</div>
+                        <h3>Title Examination</h3>
+                        <p>Comprehensive title searches and examination to ensure clear ownership and identify potential issues.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h3>Due Diligence</h3>
+                        <p>Legal due diligence for property transactions, identifying potential risks and ensuring compliance.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📄</div>
+                        <h3>Estate Planning</h3>
+                        <p>Strategic estate planning services to protect your real estate assets and ensure proper succession.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual Expertise Section -->
+    <section id="expertise" class="dual-expertise">
+        <div class="container">
+            <h2 class="section-title">The Advantage of Dual Expertise</h2>
+            <p>As both a real estate professional and a lawyer, I offer a unique advantage that streamlines your experience and provides comprehensive protection for your interests.</p>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Legal Protection</h3>
+                    <p>Ensure your real estate transactions are legally sound with expert guidance that anticipates and prevents potential issues.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">🏙️</div>
-                    <h3>Property Listing</h3>
-                    <p>Maximize your property's value with strategic marketing, professional photography, and expert negotiation.</p>
+                <div class="benefit">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Seamless Process</h3>
+                    <p>Experience a streamlined process with one professional handling both your real estate and legal needs.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Market Analysis</h3>
-                    <p>Get detailed insights on property values, market trends, and investment opportunities in your area of interest.</p>
+                <div class="benefit">
+                    <i class="fas fa-search-dollar"></i>
+                    <h3>Cost Efficiency</h3>
+                    <p>Save time and money by working with one professional who understands both the real estate market and legal requirements.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">🏗️</div>
-                    <h3>Land Acquisition</h3>
-                    <p>Discover prime land opportunities for development or investment with comprehensive due diligence support.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3>Property Management</h3>
-                    <p>Enjoy peace of mind with professional management services for your investment properties.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Investment Consulting</h3>
-                    <p>Receive expert advice on real estate investments to maximize returns and minimize risks.</p>
+                <div class="benefit">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Negotiation Power</h3>
+                    <p>Benefit from stronger negotiation leverage backed by both market knowledge and legal expertise.</p>
                 </div>
             </div>
         </div>
@@ -517,55 +812,66 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <h2 class="section-title">What My Clients Say</h2>
-            <p>Hear from some of my satisfied clients.</p>
+            <p>Hear from some of my satisfied clients across both real estate and legal services.</p>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <img src="1.jpg" alt="Client 1">
-                    <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p>"Chidimma helped me find my dream home. Her professionalism and attention to detail are unmatched!"</p>
-                    <h4>Emmanuel Bright</h4>
-                    <span>Home Buyer</span>
+            <div class="testimonial-tabs">
+                <div class="testimonial-tab active" data-tab="real-estate">Real Estate Clients</div>
+                <div class="testimonial-tab" data-tab="legal">Legal Clients</div>
+            </div>
+            
+            <div id="real-estate-testimonials" class="testimonial-content active">
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <img src="1.jpg" alt="Client 1">
+                        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"Chidimma helped me find my dream home. Her professionalism and attention to detail are unmatched!"</p>
+                        <h4>Emmanuel Bright</h4>
+                        <span>Home Buyer</span>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <img src="2.jpg" alt="Client 2">
+                        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"I sold my property with Chidimma's help. She made the process seamless and stress-free."</p>
+                        <h4>Jane Agkwubuike</h4>
+                        <span>Property Seller</span>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <img src="3.jpg" alt="Client 3">
+                        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"Chidimma's market analysis helped me make a smart investment. Highly recommended!"</p>
+                        <h4>Celestine Obi</h4>
+                        <span>Investor</span>
+                    </div>
                 </div>
-                
-                <div class="testimonial-card">
-                    <img src="2.jpg" alt="Client 2">
-                    <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p>"I sold my property with Chidimma's help. She made the process seamless and stress-free."</p>
-                    <h4>Jane Agkwubuike</h4>
-                    <span>Property Seller</span>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="3.jpg" alt="Client 3">
-                    <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p>"Chidimma's market analysis helped me make a smart investment. Highly recommended!"</p>
-                    <h4>Celestine Obi</h4>
-                    <span>Investor</span>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="4.jpg" alt="Client 4">
-                    <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p>"Her expertise in land acquisition is top-notch. I couldn't have done it without her."</p>
-                    <h4>Ginika Francisca</h4>
-                    <span>Land Developer</span>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="5.jpg" alt="Client 5">
-                    <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p>"Chidimma manages my properties efficiently. I trust her completely."</p>
-                    <h4>Sylvia Juddy</h4>
-                    <span>Property Owner</span>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="6.jpg" alt="Client 6">
-                    <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-                    <p>"Her investment consulting services are invaluable. She knows the market inside out."</p>
-                    <h4>Francis Madu</h4>
-                    <span>Real Estate Investor</span>
+            </div>
+            
+            <div id="legal-testimonials" class="testimonial-content">
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <img src="4.jpg" alt="Client 4">
+                        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"Chidimma's legal expertise saved me from a potentially disastrous property contract. Her attention to detail is exceptional."</p>
+                        <h4>Michael Adebayo</h4>
+                        <span>Legal Client</span>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <img src="5.jpg" alt="Client 5">
+                        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"As both my realtor and legal counsel, Chidimma provided a seamless experience that saved me time and money."</p>
+                        <h4>Sylvia Juddy</h4>
+                        <span>Real Estate & Legal Client</span>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <img src="6.jpg" alt="Client 6">
+                        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"Chidimma helped me resolve a complex property boundary dispute with her combined knowledge of real estate and law."</p>
+                        <h4>Francis Madu</h4>
+                        <span>Legal Client</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -575,7 +881,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p>Ready to start your real estate journey? Contact me today for a consultation.</p>
+            <p>Ready to start your real estate journey or need legal assistance? Contact me today for a consultation.</p>
             
             <div class="contact-methods">
                 <div class="contact-card">
@@ -605,7 +911,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Chidimma Francisca Obi | Real Estate Professional</p>
+            <p>&copy; 2025 Chidimma Francisca Obi | Real Estate & Legal Professional</p>
         </div>
     </footer>
 
@@ -661,6 +967,49 @@
                 hamburgerMenu.textContent = '☰';
                 hamburgerMenu.setAttribute('aria-expanded', 'false');
             }
+        });
+        
+        // Service and Testimonial tabs
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        const serviceContents = document.querySelectorAll('.service-content');
+        
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.tab;
+                
+                // Update active tab
+                serviceTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                serviceContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${target}-services`) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        const testimonialTabs = document.querySelectorAll('.testimonial-tab');
+        const testimonialContents = document.querySelectorAll('.testimonial-content');
+        
+        testimonialTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.tab;
+                
+                // Update active tab
+                testimonialTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                testimonialContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${target}-testimonials`) {
+                        content.classList.add('active');
+                    }
+                });
+            });
         });
     </script>
 </body>
